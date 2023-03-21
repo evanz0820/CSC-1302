@@ -1,4 +1,5 @@
 import pandas as pd
+import numpy as np
 
 data_df = pd.DataFrame ({
     'Name': ['Asha', 'Harsh', 'Sourav', 'Riya', 'Hritik', 'Shivansh', 'Rohan', 'Akash', 'Soumya', 'Kartik'],
@@ -8,8 +9,8 @@ data_df = pd.DataFrame ({
     'Years of Experience': [5, 1, 2, 3, 4, 7, 6, 2, 1, 6]
 })
 
-grouped_data = data_df.groupby(['Employment Type', 'Department']).agg({
-    'Salary': ['mean', 'std', 'sum', 'min', 'max']
+group1 = data_df.groupby(by=["Employment Type","Department"]).agg({
+    "Salary":[np.mean,np.std,np.sum,np.min,np.max]
 })
 
-print(grouped_data)
+print(group1)
