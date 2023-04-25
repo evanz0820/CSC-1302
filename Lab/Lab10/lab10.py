@@ -1,10 +1,13 @@
 class Vehicle:
-    #Class attribute
-    special = 'Bus'
-
     def __init__(self, name, max_speed, mileage):
         self.name = name
         self.max_speed = max_speed
         self.mileage = mileage
 
-a = Vehicle('Bus', 80, 100000)
+class Bus(Vehicle):
+    pass
+
+bus = Bus("School Bus", 60, 50000)
+print(bus.name)
+print(bus.max_speed)
+print(bus.mileage)
